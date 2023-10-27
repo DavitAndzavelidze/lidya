@@ -7,7 +7,7 @@ import { rightToLeft, leftToRight } from "@/utils/motion";
 
 const Contact = () => {
   return (
-    <div className="pt-[4rem] md:pt-0 flexCenter lg:justify-between flex flex-col lg:flex-row h-screen lg:max-container">
+    <div className="my-[2rem] md:pt-0 flexCenter lg:justify-between flex flex-col lg:flex-row h-screen lg:max-container ">
       <motion.div
         variants={leftToRight}
         initial="hidden"
