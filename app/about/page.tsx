@@ -6,7 +6,7 @@ import { rightToLeft, leftToRight } from "@/utils/motion";
 
 const About = () => {
   return (
-    <div className="lg:h-screen lg:max-container flexCenter flex-col lg:flex-row px-6 py-6 ">
+    <div className="pt-[2rem] md:pt-0 md:h-screen lg:max-container flexCenter flex-col lg:flex-row px-6 py-6 ">
       <motion.div
         variants={leftToRight}
         initial="hidden"

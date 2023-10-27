@@ -7,7 +7,7 @@ import { rightToLeft, leftToRight } from "@/utils/motion";
 
 const Contact = () => {
   return (
-    <div className=" flexCenter lg:justify-between flex flex-col lg:flex-row lg:h-screen lg:max-container">
+    <div className="pt-[4rem] md:pt-0 flexCenter lg:justify-between flex flex-col lg:flex-row h-screen lg:max-container">
       <motion.div
         variants={leftToRight}
         initial="hidden"
@@ -29,7 +29,7 @@ const Contact = () => {
         whileInView="show"
         viewport={{ once: true }}
         action="#"
-        className="flex flex-col gap-2 py-6 w-full px-6 lg:px-0 lg:flex-1"
+        className="flex flex-col gap-2 py-6 w-full md:px-[6rem] px-6 lg:px-0 lg:flex-1"
       >
         <div>
           <label
