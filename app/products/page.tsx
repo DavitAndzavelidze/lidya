@@ -1,10 +1,19 @@
+"use client";
 import React from "react";
 import { PRODUCTS } from "@/constants";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { topToBottom } from "@/utils/motion";
 
 const Products = () => {
   return (
-    <div className="h-screen flexCenter max-container flexCenter px-6">
+    <motion.div
+      variants={topToBottom}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
+      className="h-screen flexCenter max-container flexCenter px-6"
+    >
       <div className="grid grid-cols-2 md:grid-cols-4 gap-1 lg:gap-4">
         {PRODUCTS.map((product) => (
           <Image
@@ -18,7 +27,7 @@ const Products = () => {
           />
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

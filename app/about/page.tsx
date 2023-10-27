@@ -1,20 +1,35 @@
+"use client";
 import Image from "next/image";
 import React from "react";
+import { motion } from "framer-motion";
+import { rightToLeft, leftToRight } from "@/utils/motion";
 
 const About = () => {
   return (
-    <div className="lg:h-screen lg:max-container flexCenter flex-col lg:flex-row px-6 py-6">
-      <div className="w-full absolute lg:relative opacity-[15%] lg:opacity-[1] z-0">
+    <div className="lg:h-screen lg:max-container flexCenter flex-col lg:flex-row px-6 py-6 ">
+      <motion.div
+        variants={leftToRight}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        className="w-full absolute lg:relative opacity-[15%] lg:opacity-[1] z-0"
+      >
         <Image
           src="/about.svg"
           width={400}
           height={600}
           priority={true}
           alt="heroImage"
-          className="object-cover h-screen lg:w-auto lg:h-auto lg:pr-3"
+          className="hidden lg:block lg:w-auto lg:h-auto lg:pr-3 "
         />
-      </div>
-      <div className="text-[14px] lg:text-[16px] flex flex-col gap-4 leading-10">
+      </motion.div>
+      <motion.div
+        variants={rightToLeft}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        className="text-[14px] lg:text-[16px] flex flex-col gap-4 leading-10 lg:bg-slate-300/75 lg:py-3 lg:px-6 lg:rounded-xl shadow-xl"
+      >
         <p>
           <span className="font-bold text-[20px]"> About Us </span> -LIDYA
           company is a leader in distribution of steel long and flat products
@@ -36,7 +51,7 @@ const About = () => {
           müşterilerimizin ihtiyaçlarına en uygun ürünleri bulmalarına yardımcı
           olacağımızı da garanti ediyoruz.
         </p>
-      </div>
+      </motion.div>
     </div>
   );
 };

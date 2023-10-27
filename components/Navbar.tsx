@@ -4,6 +4,8 @@ import { NAV_LINKS } from "@/constants";
 import Link from "next/link";
 import Image from "next/image";
 import MobileMenu from "./MobileMenu";
+import { motion } from "framer-motion";
+import { topToBottom } from "@/utils/motion";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -11,12 +13,22 @@ const Navbar = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
   return (
-    <div className="flexBetween max-container pt-5 px-6 text-[20px] relative lg:px-3 z-30">
-      <p className="font-bold text-[24px] uppercase">Lidya</p>
+    <motion.div
+      variants={topToBottom}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
+      className="flexBetween max-container pt-5 px-6 text-[20px] relative lg:px-3 z-30"
+    >
+      <p className="font-bold text-[24px] uppercase cursor-default">Lidya</p>
       <nav>
         <ul className="hidden h-full gap-12 lg:flex">
           {NAV_LINKS.map((link) => (
-            <Link href={link.href} key={link.key}>
+            <Link
+              href={link.href}
+              key={link.key}
+              className="transition-all border-b-2 border-[#f1f2f3] hover:navlink-Hover"
+            >
               {link.label}
             </Link>
           ))}
@@ -33,7 +45,7 @@ const Navbar = () => {
           <MobileMenu isOpen={isMobileMenuOpen} onClose={toggleMobileMenu} />
         </div>
       </nav>
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,20 +1,33 @@
+"use client";
 import Button from "@/components/Button";
 import { Contacts } from "@/constants";
 import React from "react";
+import { motion } from "framer-motion";
+import { rightToLeft, leftToRight } from "@/utils/motion";
 
 const Contact = () => {
   return (
     <div className=" flexCenter lg:justify-between flex flex-col lg:flex-row lg:h-screen lg:max-container">
-      <div className="flex flex-col gap-6 px-6 py-6 lg:px-0 lg:py-0 lg:flex-1">
+      <motion.div
+        variants={leftToRight}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        className="flex flex-col gap-6 px-6 py-6 lg:px-0 lg:py-0 lg:flex-1 lg:h-[50%]"
+      >
         {Contacts.map((info) => (
           <div key={info.title}>
             <h4 className="font-bold ">{info.title}</h4>
             <p>{info.content}</p>
           </div>
         ))}
-      </div>
+      </motion.div>
 
-      <form
+      <motion.form
+        variants={rightToLeft}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
         action="#"
         className="flex flex-col gap-2 py-6 w-full px-6 lg:px-0 lg:flex-1"
       >
@@ -92,7 +105,7 @@ const Contact = () => {
             variant="btn_dark_blue"
           />
         </div>
-      </form>
+      </motion.form>
     </div>
   );
 };
