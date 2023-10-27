@@ -28,7 +28,7 @@ const About = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
-        className="text-[14px] lg:text-[16px] flex flex-col gap-4 leading-10 lg:bg-slate-300/75 lg:py-3 lg:px-6 lg:rounded-xl shadow-xl"
+        className="text-[14px] lg:text-[16px] flex flex-col gap-4 leading-10 lg:bg-slate-300/75 lg:py-3 lg:px-6 lg:rounded-xl lg:shadow-xl"
       >
         <p>
           <span className="font-bold text-[20px]"> About Us </span> -LIDYA

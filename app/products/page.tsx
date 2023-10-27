@@ -1,11 +1,24 @@
 "use client";
-import React from "react";
-import { PRODUCTS } from "@/constants";
+import React, { useState } from "react";
+import Modal from "@/components/Modal";
 import Image from "next/image";
+import { PRODUCTSLIST } from "@/constants";
 import { motion } from "framer-motion";
 import { topToBottom } from "@/utils/motion";
 
-const Products = () => {
+const YourPage = () => {
+  const [selectedContent, setSelectedContent] = useState<any | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = (content: any) => {
+    setSelectedContent(content);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setSelectedContent(null);
+    setIsModalOpen(false);
+  };
   return (
     <motion.div
       variants={topToBottom}
@@ -15,20 +28,46 @@ const Products = () => {
       className="h-screen flexCenter max-container flexCenter px-6"
     >
       <div className="grid grid-cols-2 md:grid-cols-4 gap-1 lg:gap-4">
-        {PRODUCTS.map((product) => (
-          <Image
-            key={product}
-            src={product}
-            priority={true}
-            width={150}
-            height={200}
-            alt="productImage"
-            className="object-cover w-[200px] h-full lg:w-[300px] lg:h-[300px] rounded-lg lg:hover:-translate-y-1 lg:transition-transform"
-          />
+        {PRODUCTSLIST.map((product, index) => (
+          <div key={index} onClick={() => openModal(product)}>
+            <Image
+              src={product.image}
+              priority={true}
+              width={150}
+              height={200}
+              alt={`Image ${index}`}
+              className="object-cover w-[200px] h-full lg:w-[300px] lg:h-[300px] rounded-lg lg:hover:-translate-y-1 lg:transition-transform"
+            />
+          </div>
         ))}
       </div>
+
+      <Modal isOpen={isModalOpen} onClose={closeModal}>
+        {selectedContent && (
+          <div className="w-[300px] md:w-[400px]">
+            <Image
+              src={selectedContent.image}
+              width={400}
+              height={600}
+              alt="Selectedimage"
+            />
+            <div className="pt-4">
+              <h2>{selectedContent.title}</h2>
+              <p>{selectedContent.details}</p>
+              <button className="flexEnd w-full mt-4" onClick={closeModal}>
+                <Image
+                  src="/closeBlack.svg"
+                  width={20}
+                  height={20}
+                  alt="closebtn"
+                />
+              </button>
+            </div>
+          </div>
+        )}
+      </Modal>
     </motion.div>
   );
 };
 
-export default Products;
+export default YourPage;
