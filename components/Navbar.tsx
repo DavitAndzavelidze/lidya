@@ -20,7 +20,13 @@ const Navbar = () => {
       viewport={{ once: true }}
       className="flexBetween max-container pt-5 px-6 text-[20px] relative lg:px-3 z-30"
     >
-      <p className="font-bold text-[24px] uppercase cursor-default">Lidya</p>
+      <Image
+        src="/logo.svg"
+        width={80}
+        height={60}
+        alt="logo"
+        className="object-cover"
+      />
       <nav>
         <ul className="hidden h-full gap-12 lg:flex">
           {NAV_LINKS.map((link) => (
