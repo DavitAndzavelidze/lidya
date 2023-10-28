@@ -1,7 +1,5 @@
 "use client";
-import Button from "@/components/Button";
 import { Contacts } from "@/constants";
-import React from "react";
 import { motion } from "framer-motion";
 import { rightToLeft, leftToRight } from "@/utils/motion";
 
@@ -24,27 +22,29 @@ const Contact = () => {
       </motion.div>
 
       <motion.form
+        action="https://getform.io/f/b2fc02d1-c2c1-4aa7-80fa-de85ca38b6f5"
+        method="POST"
         variants={rightToLeft}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
-        action="#"
         className="flex flex-col gap-2 py-6 w-full md:px-[6rem] px-6 lg:px-0 lg:flex-1"
       >
         <div>
           <label
-            htmlFor="first-name"
+            htmlFor="name"
             className="block text-sm font-semibold leading-6 text-gray-900"
           >
-            First name
+            Name
           </label>
           <div>
             <input
               type="text"
-              name="first-name"
-              id="first-name"
+              name="name"
+              id="name"
               autoComplete="given-name"
               className="formInput"
+              required
             />
           </div>
         </div>
@@ -62,6 +62,7 @@ const Contact = () => {
               id="subject"
               autoComplete="given-name"
               className="formInput"
+              required
             />
           </div>
         </div>
@@ -79,6 +80,7 @@ const Contact = () => {
               id="email"
               autoComplete="email"
               className="formInput"
+              required
             />
           </div>
         </div>
@@ -95,15 +97,13 @@ const Contact = () => {
             rows={4}
             className="formInput resize-none"
             defaultValue={""}
+            required
           />
         </div>
         <div className="mx-auto">
-          <Button
-            type="submit"
-            alt="submit"
-            title="Send message"
-            variant="btn_dark_blue"
-          />
+          <button type="submit" className="btn_dark_blue rounded-lg">
+            Send message
+          </button>
         </div>
       </motion.form>
     </div>
