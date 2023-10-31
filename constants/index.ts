@@ -18,14 +18,14 @@ export const NAV_LINKS = [
 // ];
 export const PRODUCTSLIST = [
   {
-    image: "/img1.webp",
+    image: "/img1.svg",
     title: `Steel Rebar`,
     details: `Grade: B500B
     Dimensions: 8mm-32mm
     Length: 12000mm`,
   },
   {
-    image: "/img2.webp",
+    image: "/img2.svg",
     title: `GI and PPGI coils`,
     details: `Grade DX51
     Dimensions: 
@@ -38,7 +38,7 @@ export const PRODUCTSLIST = [
     `,
   },
   {
-    image: "/img3.webp",
+    image: "/img3.svg",
     title: ` `,
     details: `-Equal Angels, 20-250 mm
     -Unequal angels 45-200 mm
@@ -50,7 +50,7 @@ export const PRODUCTSLIST = [
     `,
   },
   {
-    image: "/img4.webp",
+    image: "/img4.svg",
     title: `EU Wide Flange Beams H Profiles`,
     details: `-HEA-HEB-HEM, 100-1000mm
     -HD Wide Flange Columns 260-400mm
@@ -58,7 +58,7 @@ export const PRODUCTSLIST = [
     `,
   },
   {
-    image: "/img5.webp",
+    image: "/img5.svg",
     title: `Hollow Sections`,
     details: `-Circular Hollow Section
     -Square Hollow Section
@@ -67,7 +67,7 @@ export const PRODUCTSLIST = [
     `,
   },
   {
-    image: "/img6.webp",
+    image: "/img6.svg",
     title: `CR and HR Sheets`,
     details: `Grade: S235JR
     Dimension: 1mm-40mm

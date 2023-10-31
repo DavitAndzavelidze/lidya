@@ -52,8 +52,8 @@ const YourPage = () => {
               alt="Selectedimage"
             />
             <div className="pt-4 flex flex-col">
-              <h2>{selectedContent.title}</h2>
-              <p>{selectedContent.details}</p>
+              <h2 className="font-bold">{selectedContent.title}</h2>
+              <p className="w-[200px]">{selectedContent.details}</p>
               <button className=" mt-4 self-end" onClick={closeModal}>
                 <Image
                   src="/closeBlack.svg"
