@@ -17,6 +17,21 @@ body {
 }
 
 @layer utilities {
+  .loader {
+    background: linear-gradient(to right, #f1f0f0, #c1c0c0, #f1f0f0);
+    background-size: 200%;
+    background-position: left;
+    animation: load 1s ease-out 0s infinite normal;
+  }
+  @keyframes load {
+    0%,
+    100% {
+      background-position: right;
+    }
+    50% {
+      background-position: left;
+    }
+  }
   .max-container {
     @apply mx-auto max-w-[1440px];
   }
