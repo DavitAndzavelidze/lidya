@@ -6,7 +6,7 @@ import { PRODUCTSLIST } from "@/constants";
 import { motion } from "framer-motion";
 import { topToBottom } from "@/utils/motion";
 
-const YourPage = () => {
+const Products = () => {
   const [selectedContent, setSelectedContent] = useState<any | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -32,7 +32,7 @@ const YourPage = () => {
           <div key={index} onClick={() => openModal(product)}>
             <Image
               src={product.image}
-              priority={true}
+              priority
               width={150}
               height={200}
               alt={`Image ${index}`}
@@ -70,4 +70,4 @@ const YourPage = () => {
   );
 };
 
-export default YourPage;
+export default Products;

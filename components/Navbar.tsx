@@ -24,6 +24,7 @@ const Navbar = () => {
         src="/logo.svg"
         width={80}
         height={60}
+        priority
         alt="logo"
         className="object-cover"
       />
